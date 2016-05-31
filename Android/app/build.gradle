@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "pw.impress.multimedia"
-        minSdkVersion 9
+        minSdkVersion 13
         targetSdkVersion 23
         versionCode 1_000
         versionName "0.1.0"
