@@ -1,1 +1,11 @@
+.DS_Store
+*.iml
 /Android/.idea
+/Android/.gradle
+/Android/local.properties
+/Android/.idea
+/Android/.idea
+/Android/.DS_Store
+/Android/app/build
+/Android/build
+/Android/captures
