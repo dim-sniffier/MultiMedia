@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import pw.impress.multimedia.util.Htmls;
 
 public class MainActivity extends AppCompatActivity {
+    ViewHolder holder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        holder = new ViewHolder();
+        holder.bind();
     }
 
     @Override
@@ -41,6 +45,21 @@ public class MainActivity extends AppCompatActivity {
 
         ViewHolder() {
             container = (WebView) findViewById(R.id.main_webview);
+
+            // 网页的属性设置
+            container.getSettings().setDefaultFontSize(Htmls.FONT_SIZE);
+        }
+
+        void bind() {
+            String content = "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
+            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
+            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
+            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
+            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
+            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
+
+            String html = Htmls.defaults(getApplicationContext()).replace("{{web_content}}", content);
+            container.loadDataWithBaseURL("", html, Htmls.MIME_TYPE, Htmls.HTML_ENCODING, "");
         }
     }
 }
