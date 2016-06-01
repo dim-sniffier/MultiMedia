@@ -47,19 +47,14 @@ public class MainActivity extends AppCompatActivity {
             container = (WebView) findViewById(R.id.main_webview);
 
             // 网页的属性设置
-            container.getSettings().setDefaultFontSize(Htmls.FONT_SIZE);
+            container.getSettings().setJavaScriptEnabled(true);
         }
 
         void bind() {
-            String content = "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
-            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
-            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
-            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
-            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
-            content += "1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>800908901<br/>1<br/>1<br/>1<br/>uoiu1<br/>";
+            String content = "";
 
             String html = Htmls.defaults(getApplicationContext()).replace("{{web_content}}", content);
-            container.loadDataWithBaseURL("", html, Htmls.MIME_TYPE, Htmls.HTML_ENCODING, "");
+            container.loadDataWithBaseURL(Htmls.ASSETS_FOLDER, html, Htmls.MIME_TYPE, Htmls.HTML_ENCODING, "");
         }
     }
 }

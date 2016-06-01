@@ -13,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Htmls {
     static final Map<String, String> FILE_MAPS = new ConcurrentHashMap<String, String>();
+    public static final String ASSETS_FOLDER = "file:///android_asset/";
     public static final String HTML_ENCODING = "utf-8";
     public static final String MIME_TYPE = "text/html";
     public static final int FONT_SIZE = 14;
