@@ -7,8 +7,12 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.image {
+img, .image {
     max-width: 100%;
+}
+
+small, .image-alt {
+    color: #888888;
 }
 
 .container {
